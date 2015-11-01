@@ -1,0 +1,8 @@
+.classpath
+.project
+.settings/org.eclipse.jdt.core.prefs
+.settings/org.eclipse.m2e.core.prefs
+target/Pickpocket-0.0.1-SNAPSHOT.jar
+target/classes/com/kbg/Pickpocket/Pickpocket.class
+target/classes/plugin.yml
+target/maven-archiver/pom.properties
