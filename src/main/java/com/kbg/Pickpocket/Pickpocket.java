@@ -17,7 +17,7 @@ public class Pickpocket extends org.bukkit.plugin.java.JavaPlugin implements org
         if (event.getRightClicked() instanceof Player && !isPlayerInCone(event.getPlayer(), (Player) event.getRightClicked(), (event.getPlayer().isSneaking() ? 70 : 90), 5)) //clicking player isn't visible to clicked
                 event.getPlayer().openInventory(scramble(event.getPlayer(), (Player) event.getRightClicked()));         
     }
-    public static final synchronized boolean isPlayerInCone(Player p, Player clicked, double coneAngle, double radius) {
+    private static boolean isPlayerInCone(Player p, Player clicked, double coneAngle, double radius) {
         final double coneArea = Math.tan(coneAngle) * Math.tan(coneAngle), radiusSquared = radius * radius;
         org.bukkit.util.Vector n = p.getLocation().toVector().subtract(clicked.getLocation().toVector()).normalize();
         return (clicked.getLocation().getDirection().normalize().crossProduct(n).lengthSquared() <= coneArea // within cone
