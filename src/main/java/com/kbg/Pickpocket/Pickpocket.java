@@ -24,7 +24,7 @@ public class Pickpocket extends org.bukkit.plugin.java.JavaPlugin implements org
                 && clicked.getLocation().distanceSquared(p.getLocation()) <= radiusSquared // within radius
                 && clicked.getLocation().getDirection().dot(n) >= 0); // same direction     
     }
-    public static Inventory scramble(Player player, Player clicked) {
+    private static Inventory scramble(Player player, Player clicked) {
         Inventory scrambled = org.bukkit.Bukkit.createInventory(clicked, player.getInventory().getSize(), "Pickpocket");
         IntStream.range(0, clicked.getInventory().getContents().length).filter(i -> clicked.getInventory().getContents()[i] != null).forEach(i -> {
             ItemStack item = new ItemStack(clicked.getInventory().getContents()[i].getType(), clicked.getInventory().getContents()[i].getAmount());
