@@ -1,4 +1,4 @@
-package com.kbg.Pickpocket;
+package com.kbg.pickpocket;
 
 import java.util.stream.IntStream;
 
