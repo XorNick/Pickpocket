@@ -2,4 +2,4 @@ name: Pickpocket
 description: asdf
 version: 1.0
 
-main: com.kbg.Pickpocket.Pickpocket
+main: com.kbg.pickpocket.pickpocket

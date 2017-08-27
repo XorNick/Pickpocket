@@ -25,7 +25,7 @@ public class Pickpocket extends org.bukkit.plugin.java.JavaPlugin implements org
                 && clicked.getLocation().getDirection().dot(n) >= 0); // same direction     
     }
     private static Inventory scramble(Player player, Player clicked) {
-        Inventory scrambled = org.bukkit.Bukkit.createInventory(clicked, player.getInventory().getSize(), "Pickpocket");
+        Inventory scrambled = org.bukkit.Bukkit.createInventory(clicked, player.getInventory().getSize(), "pickpocket");
         IntStream.range(0, clicked.getInventory().getContents().length).filter(i -> clicked.getInventory().getContents()[i] != null).forEach(i -> {
             ItemStack item = new ItemStack(clicked.getInventory().getContents()[i].getType(), clicked.getInventory().getContents()[i].getAmount());
             ItemMeta im = item.getItemMeta();
@@ -38,7 +38,7 @@ public class Pickpocket extends org.bukkit.plugin.java.JavaPlugin implements org
     }
     @org.bukkit.event.EventHandler
     public void onInventoryClick(org.bukkit.event.inventory.InventoryClickEvent event) {
-        if (event.getWhoClicked() instanceof Player && event.getAction() == InventoryAction.MOVE_TO_OTHER_INVENTORY && event.getClickedInventory().getName().equals("Pickpocket")) {
+        if (event.getWhoClicked() instanceof Player && event.getAction() == InventoryAction.MOVE_TO_OTHER_INVENTORY && event.getClickedInventory().getName().equals("pickpocket")) {
             ((Player) event.getWhoClicked()).getInventory().addItem(((Player) event.getInventory().getHolder()).getInventory().getItem(event.getSlot()));
             ((Player) event.getInventory().getHolder()).getInventory().clear(event.getSlot());
             ((Player) event.getWhoClicked()).closeInventory();
